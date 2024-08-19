@@ -4,7 +4,7 @@ parameters:
   run-build:
     description: "trigger hello-job"
     type: boolean
-    default: false
+    default: true
 
 jobs:
   hello-job:
@@ -22,7 +22,7 @@ workflows:
       - hello-job
     triggers:
       - schedule:
-          cron: /5 * * * * # every 5th minute
+          cron: /1 * * * * # every minute
           filters:
             branches:
               only:
