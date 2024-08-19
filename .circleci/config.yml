@@ -17,7 +17,7 @@ jobs:
 
 workflows:
   my-workflow:
-    when: << pipeline.parameters.run-build >>
+    #when: << pipeline.parameters.run-build >>
     jobs:
       - hello-job
     triggers:
