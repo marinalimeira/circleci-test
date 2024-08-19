@@ -1,0 +1,27 @@
+version: 2.1
+
+parameters:
+  run-build:
+    description: "trigger hello-job"
+    type: boolean
+    default: false
+
+jobs:
+  hello-job:
+    docker:
+      - image: cimg/base:edge
+    steps:
+      - checkout
+      - run: echo "hello world" # run the `echo` command
+
+
+workflows:
+  my-workflow:
+    when:
+      - << pipeline.parameters.run-build >>
+    jobs:
+      - hello-job
+    triggers:
+      - schedule:
+        cron: 0 * * * * # every hour
+
