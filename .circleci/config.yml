@@ -22,7 +22,7 @@ workflows:
       - hello-job
     triggers:
       - schedule:
-          cron: * * * * * # every minute
+          cron: "* * * * *" # every minute
           filters:
             branches:
               only:
