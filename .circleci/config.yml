@@ -4,7 +4,7 @@ parameters:
   run-build:
     description: "trigger hello-job"
     type: boolean
-    default: false
+    default: true
 
 jobs:
   hello-job:
