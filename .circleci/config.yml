@@ -9,7 +9,7 @@ parameters:
 jobs:
   hello-job:
     docker:
-      - image: cimg/base:edge
+      - image: cimg/node:17.2.0
     steps:
       - checkout
       - run: echo "hello world" # run the `echo` command
@@ -22,7 +22,7 @@ workflows:
       - hello-job
     triggers:
       - schedule:
-          cron: 0 * * * * # every hour
+          cron: /5 * * * * # every 5th minute
           filters:
             branches:
               only:
