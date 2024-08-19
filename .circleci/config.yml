@@ -23,4 +23,9 @@ workflows:
     triggers:
       - schedule:
           cron: 0 * * * * # every hour
+          filters:
+            branches:
+              only:
+                - master
+
 
